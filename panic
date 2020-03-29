@@ -1,0 +1,20 @@
+<button onclick="getLoc()">PANIC</button>
+
+<p id="demo"></p>
+<script>
+var x = document.getElementById("demo");
+
+function getLoc() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(redirectMe);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+     
+}
+
+function redirectMe(position) {
+    document.location.href="https://humantraffickinghotline.org/chat?ll="+position.coords.latitude+","+position.coords.longitude+"&z=6";
+}
+
+</script>
